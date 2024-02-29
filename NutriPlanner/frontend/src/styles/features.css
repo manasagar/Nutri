@@ -33,6 +33,7 @@
     color: #666;
 }
 
+
 .feature-container {
     display: flex;
     justify-content: space-evenly;
@@ -63,6 +64,12 @@
 
 .feature-clicked p {
     color: #666;
+    width: 35vw;
+}
+
+.feature-clicked img{
+    width: 25vw;
+    height: auto;
 }
 
 .feature-clicked a {
@@ -98,5 +105,11 @@
     .feature-clicked{
         max-width: none;
         width: 70vw;
+    }
+    .feature-clicked img{
+        width: 60vw;
+    }
+    .feature-clicked p{
+        width: 60vw;
     }
 }

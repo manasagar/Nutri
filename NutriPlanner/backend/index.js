@@ -6,6 +6,7 @@ import chatBot from './routes/chatBot.js';
 import nutrition from './routes/nutrition.js';
 import tracker from './routes/tracker.js';
 import cookieParser from 'cookie-parser';
+import photoinfo from './routes/photoinfo.js';
 
 const app = express();
 db.connect();
@@ -19,6 +20,7 @@ app.use('/api/user',signUp);
 app.use('/api/chatbot',chatBot);
 app.use('/api/nutrition',nutrition);
 app.use('/api/tracker',tracker);
+app.use('/api/upload',photoinfo);
 app.use(cookieParser());
 
 

@@ -24,6 +24,7 @@ def food_code(food):
     print("Response Status Code:", response.status_code)
     foods=response.json()
     x = {i['nutrientName']:{"unitName":i['unitName'],"value":i['value']} for i in foods['foods'][0]['foodNutrients'] if (i['nutrientName'] == 'Total lipid (fat)') or (i['nutrientName'] == 'Carbohydrate, by difference') or (i['nutrientName'] == 'Energy') or (i['nutrientName'] == 'Total Sugars')}
+    
     return x
 
 
