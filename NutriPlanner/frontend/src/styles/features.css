@@ -1,5 +1,6 @@
 .features_outer{
     background-color: #f1f1ea;
+    padding-bottom: 10vh;
 }
 .feature_Container{
     display: flex;
@@ -54,7 +55,7 @@
     gap:2vh;
     align-items: center;
     padding: 10px;
-    background-color: rgb(252, 237, 216);
+    background-color: #D2E3C8;
     border-radius: 8px;
 }
 

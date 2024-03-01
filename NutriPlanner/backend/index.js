@@ -7,6 +7,7 @@ import nutrition from './routes/nutrition.js';
 import tracker from './routes/tracker.js';
 import cookieParser from 'cookie-parser';
 import photoinfo from './routes/photoinfo.js';
+import blogs from './routes/blogs.js';
 
 const app = express();
 db.connect();
@@ -15,7 +16,7 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World');
 })
-
+app.use('/api/blogs',blogs);
 app.use('/api/user',signUp);
 app.use('/api/chatbot',chatBot);
 app.use('/api/nutrition',nutrition);
