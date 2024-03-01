@@ -1,0 +1,44 @@
+
+.blog-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Title styles */
+  .blog-detail-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Content styles */
+  .blog-detail-content {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Author styles */
+  .blog-detail-author {
+    font-style: italic;
+  }
+  
+  /* Back button styles (assuming it has a class 'back-button') */
+  .back-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #45a049;
+  }
+  
