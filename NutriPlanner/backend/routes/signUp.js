@@ -13,14 +13,14 @@ router
             //Checking if all the  data exist
             if(!(firstName && lastName && email && password)){
                 const data="All fields are necessary";
-                res.status(400).send({data:data});
+                return res.status(400).send({data:data});
             }
             //Checking if the user already exists
             const id=await db.query("Select id from users where email=$1",[email]);
             // console.log(id);
             if(id.rowCount){
                 const data="User already exists with this email";
-                res.status(401).send({data:data});
+                return res.status(401).send({data:data});
             }
             //hashing a password
             const myEncPassword=await bcrypt.hash(password,10);
@@ -49,12 +49,12 @@ router
             const {email,password}=req.body;
             if(!(email && password)){
                 const data="Both fields are needed";
-                res.status(400).send({data:data});
+                return res.status(400).send({data:data});
             }
             const user=await db.query("select id,email,password from users where email=$1",[email]);
             if(user.rowCount==0){
                 const data="This user does not exist. Please signup first";
-                res.status(401).send({data:data});
+                return res.status(401).send({data:data});
             }
             const hashString = user.rows[0].password.toString();
             if(user.rowCount && (await bcrypt.compare(password,hashString))){
