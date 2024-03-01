@@ -22,6 +22,7 @@ app.use('/api/chatbot',chatBot);
 app.use('/api/nutrition',nutrition);
 app.use('/api/tracker',tracker);
 app.use('/api/upload',photoinfo);
+app.use('/api/blogs',blogs);
 app.use(cookieParser());
 
 

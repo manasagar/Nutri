@@ -15,25 +15,14 @@ router
         }
     })
 
-router
-    .route('/:id')
-    .get(async(req,res)=>{
-        try{
-            const id=req.params.id;
-            const resBody=await db.query('Select * from blogs where id=$1',[id]);
-            res.status(200).send(resBody[0].content);
-        }
-        catch(error){
-            console.log(error);
-        }
-    })
 
 router
     .route('/create')
     .post(async(req,res)=>{
         try{
-            const {title,description,Content,author}=req.body;
-            await db.query('Insert into blogs(title,description,content,author) values($1,$2,$3,$4)',[title,description,Content,author]);
+            const {title,description,content,author}=req.body;
+            await db.query('Insert into blogs(title,description,content,author) values($1,$2,$3,$4)',[title,description,content,author]);
+
             res.status(200).send("Successfully created blog post");
         }
         catch(error){
@@ -42,3 +31,4 @@ router
     })
 
 export default router;
+
