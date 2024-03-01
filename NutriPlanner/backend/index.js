@@ -16,7 +16,7 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).send('Hello World');
 })
-
+app.use('/api/blogs',blogs);
 app.use('/api/user',signUp);
 app.use('/api/chatbot',chatBot);
 app.use('/api/nutrition',nutrition);

@@ -46,16 +46,26 @@ export const TrackerOutput = () => {
   }
 
   return (
-    <div>
+    <div className='tracker-outer'>
         <BackButton />
+        <div className='tracker_main'>
+          <div className="tracker_component">
         <h1>Carbohydrate</h1>
         <Chart labels={labels} nutrient={carbohydrate} unit={'gm'} />
+        </div>
+        <div className="tracker_component">
         <h1>Energy</h1>
         <Chart labels={labels} nutrient={energy} unit={'kcal'}  />
+        </div>
+        <div className="tracker_component">
         <h1>Sugar</h1>
         <Chart labels={labels} nutrient={sugar} unit={'gm'} />
+        </div>
+        <div className="tracker_component">
         <h1>Fats</h1>
         <Chart labels={labels} nutrient={fats} unit={'gm'} />
+        </div>
+        </div>
     </div>
   )
 }

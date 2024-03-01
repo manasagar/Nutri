@@ -8,10 +8,14 @@ router
         try{
         const {morning,afternoon,evening,night}=req.body;
         let food=[];
-        food.push(morning);
-        food.push(afternoon);
-        food.push(evening);
-        food.push(night);
+        if(morning) food.push(morning);
+        if(afternoon) food.push(afternoon);
+        if(evening) food.push(evening);
+        if(night) food.push(night);
+
+        if(food.length==0){
+            return res.status(400).send("Atleast one field is necessary");
+        }
         const resBody=await axios.post('http://localhost:5000/food_info',{food : food});
         // console.log(resBody.data);
         const foods = resBody.data;

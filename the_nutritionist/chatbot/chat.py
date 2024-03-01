@@ -6,7 +6,7 @@ from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import  RecursiveCharacterTextSplitter
-os.environ["HUGGINGFACEHUB_API_TOKEN"] ="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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] =
 def extract_text_from_pdf(pdf_path):
     with open(pdf_path, 'rb') as file:
         # Create a PDF reader object

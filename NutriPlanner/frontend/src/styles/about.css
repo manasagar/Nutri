@@ -1,5 +1,6 @@
 .About_outer{
     background-color: #f1f1ea;
+    padding-bottom: 10vh;
 }
 .About_back_image{
     width:100vw;
@@ -24,6 +25,7 @@
     flex-direction: column;
     gap: 2vh;
     align-items: center;
+    width: 90vw;
 }
 .About_Text_cover{
     
@@ -47,13 +49,13 @@
 
 .About_Text{
     text-align: center;
-    font-size: 1.5rem;
-    color: #21695c;
+    font-size: 1.1rem;
+    color: #739072;
     font-family: Poppins, sans-serif;
 }
 .About_person{
-    max-width: 25vw;
-    width: 100%;
+    width: 25vw;
+    /* width: 100%; */
     height: auto;
 }
 .About_diet_Planner_text{
@@ -123,5 +125,8 @@
     }
     .About_indi{
         font-size: 1rem;
+    }
+    .About_person{
+        width: 35vw;
     }
 }

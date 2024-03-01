@@ -15,12 +15,14 @@ router
         }
     })
 
+
 router
     .route('/create')
     .post(async(req,res)=>{
         try{
             const {title,description,content,author}=req.body;
             await db.query('Insert into blogs(title,description,content,author) values($1,$2,$3,$4)',[title,description,content,author]);
+
             res.status(200).send("Successfully created blog post");
         }
         catch(error){
@@ -29,3 +31,4 @@ router
     })
 
 export default router;
+
