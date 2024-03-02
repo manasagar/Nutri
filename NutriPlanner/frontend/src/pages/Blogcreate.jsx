@@ -5,7 +5,7 @@ import '../styles/signup.css';
 import { BackButton } from '../components/BackButton';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import '../styles/blogcreate.css';
 
 export const Blogcreate = () => {
     const [blogForm,setBlogForm] = useState(
@@ -52,15 +52,15 @@ export const Blogcreate = () => {
 
 
   return (
-    <div className='signup_outer'>
-    {loading && <Loading />}
-    <BackButton />
-    <div className='signup-main-container'>
-      <div className="signup-container">
-        <h1 className='signup-h1'>Write a Blog</h1>
-        <form className='signup-form' onSubmit={handleSubmit}>
+    <>
+      <BackButton />
+    <div className='blogcreate-outer'>
+    {loading ? <Loading /> : (
+      <div className="blogcreate-container">
+        <h1 className='blogcreate-h1'>Write a Blog</h1>
+        <form className='blogcreate-form' onSubmit={handleSubmit}>
           <input
-            className='signup-input'
+            className='blogcreate-input'
             type="text"
             placeholder='Enter your Name'
             name="author"
@@ -71,7 +71,7 @@ export const Blogcreate = () => {
           />
           <br />
           <input
-            className='signup-input'
+            className='blogcreate-input'
             type="text"
             placeholder='Enter Title'
             name="title"
@@ -82,7 +82,7 @@ export const Blogcreate = () => {
           />
           <br />
           <input
-            className='signup-input'
+            className='blogcreate-input'
             placeholder='Enter Description'
             type="text"
             name="description"
@@ -92,24 +92,26 @@ export const Blogcreate = () => {
             required
           />
           <br />
-          <input
-            className='signup-input'
-            placeholder='Enter your content to post #NutriPlanner'
-            type="text"
+          <textarea
+            rows={20}
+            cols={120}
+            className='blogcreate-input'
+            placeholder='Enter your blog content #NutriPlanner'
             name="content"
             value={blogForm.content}
             onChange={onChangeHandler}
             autoComplete="off"
             required
-          />
+          ></textarea>
           <br />
           {error && <p className="error">{error}</p>}
-          <div className="signup-wrapper">
-          <button className='signup-btn' disabled={loading}>Create</button>
+          <div className="blogcreate-wrapper">
+            <button className='blog-create-btn' disabled={loading}>Post</button>
           </div>
         </form>
      </div>
+    )}
     </div>
-    </div>
+    </>
   )
 }
