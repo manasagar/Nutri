@@ -29,7 +29,7 @@ router
             // console.log(findUser);
             const token =jwt.sign(
                 {id:findUser.rows[0].id},
-                'shhhh',
+                process.env.JWT_SECRET,
                 {
                     expiresIn:"2h"
                 }
@@ -60,7 +60,7 @@ router
             if(user.rowCount && (await bcrypt.compare(password,hashString))){
                 const token=jwt.sign(
                     {id:user.rows[0].id},
-                    'shhhh',
+                    process.env.JWT_SECRET,
                     {
                         expiresIn:'2h'
                     }

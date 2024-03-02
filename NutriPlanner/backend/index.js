@@ -1,5 +1,4 @@
 import express  from 'express';
-import { PORT } from './config.js';
 import signUp from './routes/signUp.js';
 import { db } from './database/db.js';
 import chatBot from './routes/chatBot.js';
@@ -8,7 +7,7 @@ import tracker from './routes/tracker.js';
 import cookieParser from 'cookie-parser';
 import photoinfo from './routes/photoinfo.js';
 import blogs from './routes/blogs.js';
-
+const PORT=process.env.PORT;
 const app = express();
 db.connect();
 
@@ -24,7 +23,6 @@ app.use('/api/tracker',tracker);
 app.use('/api/upload',photoinfo);
 app.use('/api/blogs',blogs);
 app.use(cookieParser());
-
 
 const server = app.listen(PORT,()=>{  
     console.log(`App is running on port ${PORT}`);
