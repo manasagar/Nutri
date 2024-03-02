@@ -7,18 +7,18 @@ import '../styles/footer.css'
 
 export const Footer = () => {
   return (
-    <div class="footer-container">
-    <div class="footer-section">
+    <div className="footer-container">
+    <div className="footer-section">
       <h3>Got any questions?</h3>
       <h4>Contact Us</h4>
       <p>Email: info@example.com</p>
       <p>Phone: +123 456 7890</p>
     </div>
 
-    <div class="footer-section">
+    <div className="footer-section">
       <h4>Follow Us</h4>
       <p>Stay connected on social media for updates and tips!</p>
-      <div class="social-icons">
+      <div className="social-icons">
         <a href="#" target="_blank"><BsFacebook/></a>
         <a href="#" target="_blank"><BsTwitterX/></a>
         <a href="#" target="_blank"><BsInstagram/></a>

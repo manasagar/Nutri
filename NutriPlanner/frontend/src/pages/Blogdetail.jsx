@@ -9,13 +9,15 @@ export const Blogdetail = () => {
     const blog = location.state.output;
 
   return (
-    <div>
+    <div className='blog-detail-main'>
       <BackButton />
-      <div className='blog-detail-container'>
-        <p>{blog.title}</p>
-        <p>{blog.description}</p>
-        <p>{blog.content}</p>
-        <p>{blog.author}</p>
+      <div className='blog-detail-outer'>
+        <div className='blog-detail-container'>
+          <p className='blog-detail-title'>{blog.title}</p>
+          <p className='blog-detail-desc'>{blog.description}</p>
+          <p className='blog-detail-content'>{blog.content}</p>
+          <p className='blog-detail-author'>~{blog.author}</p>
+        </div>
       </div>
     </div>
   )
