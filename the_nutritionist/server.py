@@ -43,7 +43,6 @@ def nutrition_details():
 
         recommendations=person.Person(age,height,weight,gender,activity,meals_calories_perc,weight_loss)
         data=recommendations.generate_recommendations()
-        print(data)
         data= json.dumps(data)
        # print(data)
         return data
