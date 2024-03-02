@@ -2,9 +2,9 @@
 from Nutrition import person
 
 from flask import request
-from Food_information.food import food_code
-from chatbot.chat import bot
 
+from chatbot.chat import bot
+from Nutrition.Food_information.food import food_code
 from flask import Flask
 app = Flask(__name__)
 import json
@@ -43,8 +43,8 @@ def nutrition_details():
 
         recommendations=person.Person(age,height,weight,gender,activity,meals_calories_perc,weight_loss)
         data=recommendations.generate_recommendations()
-
-        data=json.dumps(data)
+        print(data)
+        data= json.dumps(data)
        # print(data)
         return data
 @app.route("/food_info",methods=['POST'])

@@ -7,9 +7,9 @@ import json
 
 
 
-
+nutritions_values=['Calories','FatContent','Sodium','CarbohydrateContent','Fiber','Sugars','Proteins']
 nutritions_values=['Calories','FatContent','SaturatedFatContent','CholesterolContent','SodiumContent','CarbohydrateContent','FiberContent','SugarContent','ProteinContent']
-
+nutritions_values=['Calories','FatContent','Sodium','CarbohydrateContent','Fiber','Sugars','Proteins']
 class Person:
 
     def __init__(self,age,height,weight,gender,activity,meals_calories_perc,weight_loss):
@@ -62,19 +62,25 @@ class Person:
             meal_calories=self.meals_calories_perc[meal]*total_calories
             if meal=='breakfast':        
                 recommended_nutrition = [meal_calories,rnd(10,30),rnd(0,4),rnd(0,30),rnd(0,400),rnd(40,75),rnd(4,10),rnd(0,10),rnd(30,100)]
+                recommended_nutrition = [meal_calories,rnd(10,30),rnd(0,400),rnd(40,75),rnd(4,10),rnd(0,10),rnd(30,100)]
             elif meal=='launch':
                 recommended_nutrition = [meal_calories,rnd(20,40),rnd(0,4),rnd(0,30),rnd(0,400),rnd(40,75),rnd(4,20),rnd(0,10),rnd(50,175)]
+                recommended_nutrition = [meal_calories,rnd(20,40),rnd(0,400),rnd(40,75),rnd(4,20),rnd(0,10),rnd(50,175)]
             elif meal=='dinner':
                 recommended_nutrition = [meal_calories,rnd(20,40),rnd(0,4),rnd(0,30),rnd(0,400),rnd(40,75),rnd(4,20),rnd(0,10),rnd(50,175)] 
+                recommended_nutrition = [meal_calories,rnd(20,40),rnd(0,4),rnd(40,75),rnd(4,20),rnd(0,10),rnd(50,175)] 
             else:
                 recommended_nutrition = [meal_calories,rnd(10,30),rnd(0,4),rnd(0,30),rnd(0,400),rnd(40,75),rnd(4,10),rnd(0,10),rnd(30,100)]
+                recommended_nutrition = [meal_calories,rnd(10,30),rnd(0,400),rnd(40,75),rnd(4,10),rnd(0,10),rnd(30,100)]
             generator=Generator(recommended_nutrition)
             recommended_recipes=generator.generate()
+        
             recommendations.append(recommended_recipes)
+            
         for recommendation in recommendations:
             for recipe in recommendation:
-                recipe['image_link']=find_image(recipe['Name']) 
-        #recommendations=json.dumps(recommendations)
-        
-        return recommendations
+                recommendation[recipe]['image']=find_image(recipe)
+        recommendations=json.dumps(recommendations)
+        data_list = recommendations
+        return data_list
 
